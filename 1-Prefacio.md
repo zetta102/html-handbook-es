@@ -22,7 +22,7 @@ Y había algo que la plataforma Web hacía muy bien: siempre funcionaba con docu
 
 Incluso sabemos cuál fue la primera página. Es ésta: http://info.cern.ch/hypertext/WWW/TheProject.html.
 
-Y puedes ver su código fuente ya que, gracias a otra gran función de HTML, podemos inspeccionar el código HTML de cualquier página web.
+Y puedes ver su código fuente ya que, gracias a otra gran función de HTML, **podemos inspeccionar el código HTML de cualquier página web**.
 
 Sin embargo, no crea que es algo común. No conozco otra plataforma que nos dé ésta habilidad.
 
