@@ -34,4 +34,4 @@ Aprendí mucho al escribirlo, a pesar que llevo trabajando en la web más de 20 
 
 ...O tal vez vuelva a aprender algo que había olvidado.
 
-In any case, the goal of the book is to be useful to you, and I hope it succeeds.
+De cualquier manera, la finalidad del libro es que le sea útil, y espero tenga éxito en su misión.
