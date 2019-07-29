@@ -1,6 +1,7 @@
 # El Libro de Mano de HTML
 Traducción al español del libro open source The HTML Handbook, escrito por Flavio Copes
-Repositorio original: https://github.com/flaviocopes/html-
+
+Repositorio original: https://github.com/flaviocopes/html-handbook
 
 Este repositorio contendrá los contenidos del Libro de Mano de HTML, una traducción al español del libro electrónico del mismo nombre escrito por Flavio Copes.
 
