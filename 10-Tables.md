@@ -143,22 +143,22 @@ O puede expandirse a dos o más filas, usando el atributo `rowspan`:
 
 Antes, le expliqué cómo tener encabezados de columnas, usando la etiqueta `th` dentro de la primera etiqueta `tr` de la tabla.
 
-You can add a `th` tag as the first element inside a `tr` that's not the first `tr` of the table, to have row headings:
+Puede agregar una etiqueta `th` como el primer elemento dentro de una etiqueta `tr` que no sea la primera `tr` de la tabla para obtener encabezados de fila:
 
 ```html
 <table>
   <tr>
     <th></th>
-    <th>Column 2</th>
-    <th>Column 3</th>
+    <th>Columna 2</th>
+    <th>Columna 3</th>
   </tr>
   <tr>
-    <th>Row 1</th>
+    <th>Fil 1</th>
     <td>Col 2</td>
     <td>Col 3</td>
   </tr>
   <tr>
-    <th>Row 1</th>
+    <th>Fil 1</th>
     <td>Col 2</td>
     <td>Col 3</td>
   </tr>
@@ -167,37 +167,37 @@ You can add a `th` tag as the first element inside a `tr` that's not the first `
 
 ![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.49.16.png)
 
-### More tags to organize the table
+### Más etiquetas para organizar las tablas
 
-You can add 3 more tags into a table, to have it more organized.
+Existen tres etiquetas más que pueden ser agregadas a una tabla para tenerla más organizada.
 
-This is best when using big tables. And to properly define a header and a footer, too.
+Son mejor usadas con tablas grandes, para así definir correctamente tanto el pie como el encabezado de la misma.
 
-Those tags are
+Esas etiquetas son:
 
 - `thead`
 - `tbody`
 - `tfoot`
 
-They wrap the `tr` tags to clearly define the different sections of the table. Here's an example:
+Estas envuelven las etiquetas `tr` de manera que claramente definan las diferentes secciones de la tabla. Aquí un ejemplo:
 
 ```html
 <table>
   <thead>
     <tr>
       <th></th>
-      <th>Column 2</th>
-      <th>Column 3</th>
+      <th>Columna 2</th>
+      <th>Columna 3</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Row 1</th>
+      <th>Fil 1</th>
       <td>Col 2</td>
       <td>Col 3</td>
     </tr>
     <tr>
-      <th>Row 2</th>
+      <th>Fil 2</th>
       <td>Col 2</td>
       <td>Col 3</td>
     </tr>
@@ -205,8 +205,8 @@ They wrap the `tr` tags to clearly define the different sections of the table. H
   <tfoot>
     <tr>
       <td></td>
-      <td>Footer of Col 1</td>
-      <td>Footer of Col 2</td>
+      <td>Pie de Col 1</td>
+      <td>Pie de Col 2</td>
     </tr>
   </tfoot>
 </table>
@@ -214,19 +214,19 @@ They wrap the `tr` tags to clearly define the different sections of the table. H
 
 ![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.52.41.png)
 
-## Table caption
+## Descripción de tabla
 
-A table should have a `caption` tag that describes its content. That tag should be put immediately after the opening `table` tag:
+Una tabla debería tener una etiqueta `caption` que describa su contenido. Esa etiqueta debería ser agregada inmediatamente después de la etiqueta `table`:
 
 ```html
 <table>
-  <caption>Dogs age</caption>
+  <caption>Edades de los Perritos</caption>
   <tr>
-    <th>Dog</th>
-    <th>Age</th>
+    <th>Perrito</th>
+    <th>Edad</th>
   </tr>
   <tr>
-    <td>Roger</td>
+    <td>Solovino</td>
     <td>7</td>
   </tr>
 </table>
