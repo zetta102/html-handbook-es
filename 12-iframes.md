@@ -1,24 +1,24 @@
-# iframes
+# Iframes
 
-The `iframe` tag allows us to embed content coming from other origins (other sites) into our web page.
+La etiqueta `iframe` nos permite agregar contenido de origen distinto (otras páginas) a nuestra página web.
 
-Technically, an iframe creates a new nested browsing context. This means that anything in the iframe does not interfere with the parent page, and vice versa. JavaScript and CSS do not "leak" to/from iframes.
+A nivel técnico, un iframe crea el contenido de forma anidada. Esto significa que el iframe no interfiere con la página original y viceversa. JavaScript y/o CSS no "gotean" desde/hacia los iframes.
 
-Many sites use iframes to perform various things. You might be familiar with Codepen, Glitch or other sites that allow you to code in one part of the page, and you see the result in a box. That's an iframe.
+Muchos sitios usan iframes para ejecutar varios procesos. Puede que conozca CodePen, Glitch u otros sitios que le permiten escribir código en una parte de la página, y luego ver el resultado en otra. Eso es un iframe.
 
-You create one this way:
+Puede crear uno de la siguiente manera:
 
 ```html
 <iframe src="page.html"></iframe>
 ```
 
-You can load an absolute URL, too:
+También puede hacer referencia a una URL absoluta:
 
 ```html
 <iframe src="https://site.com/page.html"></iframe>
 ```
 
-You can set a set of width and height parameters (or set them using CSS) otherwise the iframe will use the defaults, a 300x150 pixels box:
+Puede también establecer parámetros de altura y anchura. En caso que no lo haga, iframe usará los valores por defecto, una caja de 300x150 píxeles:
 
 ```html
 <iframe src="page.html" width="800" height="400"></iframe>
@@ -26,7 +26,7 @@ You can set a set of width and height parameters (or set them using CSS) otherwi
 
 ## Srcdoc
 
-The `srcdoc` attribute lets you specify some inline HTML to show. It's an alternative to `src`, but recent and not supported in Edge 18 and lower, and in IE:
+El atributo `srcdoc` le permite especificar algún código HTML para mostrar. Es un alternativa a `src`, pero más reciente y no soportada por Edge 18 y versiones anteriores, así como por Internet Explorer:
 
 ```html
 <iframe srcdoc="<p>My dog is a good dog</p>"></iframe>
@@ -34,23 +34,23 @@ The `srcdoc` attribute lets you specify some inline HTML to show. It's an altern
 
 ## Sandbox
 
-The `sandbox` attribute allows us to limit the operations allowed in the iframes.
+El atributo `sandbox` permite limitar las operaciones permitidas dentro de los iframes.
 
-If we omit it, everything is allowed:
+Si lo omitimos, todo estará permitido:
 
 ```html
 <iframe src="page.html"></iframe>
 ```
 
-If we set it to "", nothing is allowed:
+Si lo establecemos en "", nada estará permitido:
 
 ```html
 <iframe src="page.html" sandbox=""></iframe>
 ```
 
-We can select what to allow by adding options in the `sandbox` attribute. You can allow multiple ones by adding a space in between. Here's an incomplete list of the options you can use:
+Podemos seleccionar las acciones que permitiremos al añadir opciones al atributo `sandbox`. Puede permitir múltiples acciones al agregarlas con un espacio entre ellas. Esta es una lista incompleta de las opciones posibles:
 
-* `allow-forms`: allow to submit forms
+* `allow-forms`: permite enviar el contenido de las `forms`
 * `allow-modals` allow to open modals windows, including calling `alert()` in JavaScript
 * `allow-orientation-lock` allow to lock the screen orientation
 * `allow-popups` allow popups, using `window.open()` and `target="_blank"` links
