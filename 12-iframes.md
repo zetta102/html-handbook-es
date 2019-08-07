@@ -50,50 +50,48 @@ Si lo establecemos en "", nada estará permitido:
 
 Podemos seleccionar las acciones que permitiremos al añadir opciones al atributo `sandbox`. Puede permitir múltiples acciones al agregarlas con un espacio entre ellas. Esta es una lista incompleta de las opciones posibles:
 
-* `allow-forms`: permite enviar el contenido de las `forms`
-* `allow-modals` allow to open modals windows, including calling `alert()` in JavaScript
-* `allow-orientation-lock` allow to lock the screen orientation
-* `allow-popups` allow popups, using `window.open()` and `target="_blank"` links
-* `allow-same-origin` treat the resource being loaded as same origin
-* `allow-scripts` lets the loaded iframe run scripts (but not create popups).
-* `allow-top-navigation` gives access to the iframe to the top level browsing context
+* `allow-forms`: permite enviar el contenido de las `forms`.
+* `allow-modals`: permite abrir ventanas modales, incluyendo llamar a `alert()` en JavaScript.
+* `allow-orientation-lock` permite bloquear la orientación de pantalla.
+* `allow-popups` permite popups, usando `window.open()` y enlaces `target="_blank"`.
+* `allow-same-origin` trata el recurso que está cargándose como si fuera del mismo origen.
+* `allow-scripts` deja que el iframe cargado corra scripts (pero no que deje crear popups).
+* `allow-top-navigation` da al iframe acceso al nivel superior de navegación.
 
 ## Allow
 
-Currently experimental and only supported by Chromium-based browsers, this is the future of resource sharing between the parent window and the iframe.
+Actualmente experimental y solo soportado por navegadores basados en Chromium, es el futuro de intercambio de recursos entre la ventana padre y el iframe.
 
-It's similar to the `sandbox` attribute, but lets us allow specific features, including:
+Es similar al atributo `sandbox`, pero permitiéndonos características más específicas, incluyendo:
 
-- `accelerometer` gives access to the Sensors API Accelerometer interface
-- `ambient-light-sensor` gives access to the Sensors API AmbientLightSensor interface
-- `autoplay` allows to autoplay video and audio files
-- `camera` allows to access the camera from the getUserMedia API
-- `display-capture` allows to access the screen content using the getDisplayMedia API
-- `fullscreen` allows to access fullscreen mode
-- `geolocation` allows to access the Geolocation API
-- `gyroscope` gives access to the Sensors API Gyroscope interface
-- `magnetometer` gives access to the Sensors API Magnetometer interface
-- `microphone` gives access to the device microphone using the getUserMedia API
-- `midi` allows access to the Web MIDI API
-- `payment` gives access to the Payment Request API
-- `speaker` allows access to playing audio through the device speakers
-- `usb` gives access to the WebUSB API.
-- `vibrate` gives access to the Vibration API
-- `vr` gives access to the WebVR API
+- `accelerometer`, que da acceso a la interfaz API de acelerómetros.
+- `ambient-light-sensor`, que da acceso a la interfaz API de AmbientLightSensor.
+- `autoplay`, que permite reproducir automáticamente archivos de audio y video.
+- `camera`, que da acceso a la cámara del dispositivo por medio de la interfaz API getUserMedia.
+- `display-capture`, que permite acceder al contenido de la pantalla usando la API getDisplayMedia.
+- `fullscreen`, que permite acceder al modo de pantalla completa.
+- `geolocation`, que permite acceder a la API de geolocalización.
+- `gyroscope`, que da acceso a la interfaz API del giroscopio.
+- `magnetometer`, que da acceso a la interfaz API del magnetómetro.
+- `microphone`, que da acceso al micrófono del dispositivo por medio de la interfaz API getUserMedia.
+- `midi`, que da acceso a la API Web MIDI.
+- `payment`, que da acceso a la API de petición de pagos.
+- `speaker`, que da acceso a la reproducción de audio por medio de los altavoces del dispositivo.
+- `usb`, que da acceso a la API WebUSB.
+- `vibrate`, que da acceso a la API de vibración.
+- `vr`, que da acceso a la API WebVR.
 
 ## Referrer
 
-When loading an iframe, the browser sends it important information about who is loading it in the `Referer` header (notice the single `r`, a typo we must live with).
+Al cargar un iframe, el navegador envía información importante sobre el usuario que lo carga con el encabezado de `Referer`.
 
-> The misspelling of referrer originated in the original proposal by computer scientist Phillip Hallam-Baker to incorporate the field into the HTTP specification. The misspelling was set in stone by the time of its incorporation into the Request for Comments standards document RFC 1945
+El atributo `referrerpolicy` nos deja establecer la información del usuario a enviar al iframe cuando carga. Esta etiqueta es un encabezado HTTP que deja que la página sepa quién la está cargando. Estos son los valores permitidos:
 
-The `referrerpolicy` attribute lets us set the referrer to send to the iframe when loading it. The referrer is an HTTP header that lets the page know who is loading it. These are the allowed values:
-
-- `no-referrer-when-downgrade` it's the default, and sends the referrer when the current page is loaded over HTTPS and the iframe loads on the HTTP protocol
-- `no-referrer` does not send the referrer header
-- `origin` the referrer is sent, and only contains the origin (port, protocol, domain), not the origin + path which is the default
-- `origin-when-cross-origin` when loading from the same origin (port, protocol, domain) in the iframe, the referrer is sent in its complete form (origin + path). Otherwise only the origin is sent
-- `same-origin` the referrer is sent only when loading from the same origin (port, protocol, domain) in the iframe
-- `strict-origin` sends the origin as the referrer if the current page is loaded over HTTPS and the iframe also loads on the HTTPS protocol. Sends nothing if the iframe is loaded over HTTP
-- `strict-origin-when-cross-origin` sends the origin + path as the referrer when working on the same origin. Sends the origin as the referrer if the current page is loaded over HTTPS and the iframe also loads on the HTTPS protocol. Sends nothing if the iframe is loaded over HTTP
-- `unsafe-url`: sends the origin + path as the referrer even when loading resources from HTTP and the current page is loaded over HTTPS
+- `no-referrer-when-downgrade`, que es el atributo por defecto, y envía la información cuando la página actual esté cargada sobre HTTPS y el iframe en HTTP.
+- `no-referrer`, que no envía la información del encabezado.
+- `origin`, que envía la información, y solo contiene el origen (puerto, protocolo y dominio), no solo el origen más la dirección, que suele ser la información que envía por defecto.
+- `origin-when-cross-origin`, que envía la información del encabezado en su forma completa (origen + dirección) al cargarlo en una página del mismo dominio (puerto, protocolo y dominio). De otra manera, solo envía el origen.
+- `same-origin`, la información se envía solamente si el iframe se carga desde el mismo dominio (puerto, protocolo y dominio).
+- `strict-origin`, envía la información de origen como el encabezado si la página actual fue cargada sobre HTTPS y el iframe también. No envía nada si el iframe se envía sobre HTTP.
+- `strict-origin-when-cross-origin`, envía el origen + dirección como infomación de encabezado al trabajar en el mismo origen. Envía el origen como infomación si la página actual se carga sobre HTTPS y el iframe también. No envía nada si el iframe se carga sobre HTTP.
+- `unsafe-url`, que envía el origen + dirección como información incluso al cargar recursos sobre HTTP mientras que la página haya sido cargada sobre HTTPS.
