@@ -160,6 +160,6 @@ Con el atributo `aria-hidden="true"`, le dirá a los lectores de pantalla que ig
 
 Esta es solo una introducción al tema. Para aprender más, recomiendo estos recursos (en inglés):
 
-- [https://www.w3.org/TR/WCAG20/](https://www.w3.org/TR/WCAG20/)
-- [https://webaim.org](https://webaim.org/)
-- [https://developers.google.com/web/fundamentals/accessibility/](https://developers.google.com/web/fundamentals/accessibility/)
+- [W3](https://www.w3.org/TR/WCAG20/)
+- [WebAim](https://webaim.org/)
+- [Google Developers](https://developers.google.com/web/fundamentals/accessibility/)
