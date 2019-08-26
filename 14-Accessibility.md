@@ -70,7 +70,7 @@ Puede asignar un montón de roles distintos, eso sí, todos en perfecto inglés,
 
 Son un montón, y para una completa referencia de cada uno, le entrego este [enlaze de MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles). Pero tampoco es necesario asignar un rol a cada elemento de la página. Los lectores de pantalla pueden inferirlo de la etiqueta HTML en la mayoría de los casos. Por ejemplo, no necesita agregar este atributo a etiquetas como `nav`, `button` o `form`.
 
-Let's take the `nav` tag example. You can use it to define the page navigation like this:
+Tomemos un ejemplo con la etiqueta `nav`. Puede usarla para definir la navegación de página de la siguiente manera:
 
 ```html
 <nav>
@@ -81,7 +81,7 @@ Let's take the `nav` tag example. You can use it to define the page navigation l
 </nav>
 ```
 
-If you were *forced* to use a `div` tag instead of `nav`, you'd use the `navigation` role:
+Si estuviera *forzado* a usar una etiqueta `div` en lugar de `nav`, debería entonces usar el rol `navigation`:
 
 ```html
 <div role="navigation">
@@ -92,13 +92,13 @@ If you were *forced* to use a `div` tag instead of `nav`, you'd use the `navigat
 </div>
 ```
 
-So here you got a practical example: `role` is used to assign a meaningful value when the tag does not convey the meaning already.
+Así que acá tiene un ejemplo práctico: `role` es usado para asignar un valor significativo cuando la etiqueta no entrega el significado deseado
 
-## Use the `tabindex` attribute
+## Use el atributo `tabindex`
 
-The `tabindex` attribute allows you to change the order of how pressing the Tab key selects "selectable" elements. By defaults only links and form elements are "selectable" by navigation using the Tab key (and you don't need to set `tabindex` on them).
+Este atributo le permite cambiar el orden en el cual la tecla Tabulador "selecciona" los elementos seleccionables. Por defecto, solo los enlaces y elementos de un formulario solo "seleccionables" de esta manera, por lo que no tiene que usar `tabindex` en ellos.
 
-Adding `tabindex="0"` makes an element selectable:
+Agregar `tabindex="0"` a un elemento hace al mismo seleccionable:
 
 ```html
 <div tabindex="0">
@@ -106,63 +106,59 @@ Adding `tabindex="0"` makes an element selectable:
 </div>
 ```
 
-Using `tabindex="-1"` instead removes an element from this tab-based navigation, and it can be pretty useful.
+Por otra parte, usar `tabindex="-1"` en su lugar elimina este tipo de navegación del elemento, siendo bastante útil en algunos casos.
 
-## Use the `aria` attributes
+## Use los atributos `aria`
 
-ARIA is an acronym that means Accessible Rich Internet Applications and defines semantics that can be applied to elements.
+ARIA es un acrónimo que significa Aplicaciones de Internet Ricas y Accesibles (_Accessible Rich Internet Applications_, en inglés), y define semática aplicada a elementos.
 
 ### `aria-label`
 
-This attribute is used to add a string to describe an element.
+Este atributo se usa para agregar una oración que describa a un elemento.
 
-Example:
+Ejemplo:
 
 ```html
-<p aria-label="The description of the product">...</p>
+<p aria-label="Descripción de un producto">...</p>
 ```
-
-I use this attribute on my blog sidebar, where I have an input box for search without an explicit label, as it has a placeholder attribute.
 
 ### `aria-labelledby`
 
-This attribute sets a correlation between the current element and the one that labels it.
+Este atributo configuta una correlación entre el elemento actual y el que lo etiqueta.
 
-If you know how an `input` element can be associated to a `label` element, that's similar.
+Si entiende cómo un elemento `input` se puede asociar a un elemento `label`, puede pensar esto en términos similares.
 
-We pass the item id that describes the current element.
+Pasamos la identificación del objetoq ue describe el elemento actual.
 
-Example:
+Ejemplo:
 
 ```html
-<h3 id="description">The description of the product</h3>
+<h3 id="descripcion">Descripción del producto</h3>
 
-<p aria-labelledby="description">
+<p aria-labelledby="descripcion">
 ...
 </p>
 ```
 
 ### `aria-describedby`
 
-This attribute lets us associate an element with another element that serves as description.
+Este atributo nos permite asociar un elemento con otro elemento que sirva como descripción.
 
-Example:
+Ejemplo:
 
 ```html
-<button aria-describedby="payNowDescription" >Pay now</button>
+<button aria-describedby="pADescripcion" >Pague Ahora</button>
 
-<div id="payNowDescription">Clicking the button will send you to our Stripe form!</div>
+<div id="pADescripcion">¡Hacer click en el botón lo enviará a nuestro fomulario!</div>
 ```
 
-### Use aria-hidden to hide content
+### Use aria-hidden para ocultar contenido
 
-I like a minimalistic design in my sites. My blog for example is mostly just content, with some links in the sidebar. But some things in the sidebar are just visual elements that don't add up to the experience of a person that can't see the page. Like my logo picture, or the dark/bright theme selector.
+Con el atributo `aria-hidden="true"`, le dirá a los lectores de pantalla que ignoren el elemento
 
-Adding the `aria-hidden="true"` attribute will tell screen readers to ignore that element.
+## Dónde aprender más
 
-## Where to learn more
-
-This is just an introduction to the topic. To learn more, I recommend these resources:
+Esta es solo una introducción al tema. Para aprender más, recomiendo estos recursos (en inglés):
 
 - [https://www.w3.org/TR/WCAG20/](https://www.w3.org/TR/WCAG20/)
 - [https://webaim.org](https://webaim.org/)
