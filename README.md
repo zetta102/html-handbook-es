@@ -9,7 +9,7 @@ Todos los comentarios son bienvenidos, sin embargo, serían especialmente útile
 
 * ¿Se me olvidó agregar/traducir algo importante?
 * ¿Alguna explicación es demasiado complicada?
-* ¿Agregué/trauje información irrelevante?
+* ¿Agregué/traduje información irrelevante?
 * ¿Hay errores de tipeo/escritura?
 
 Todas las PRs son bienvenidas siempre y cuando sea para este tipo de comentarios.
