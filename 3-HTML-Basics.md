@@ -175,61 +175,60 @@ y no así:
 <P>Un parágrafo de texto</P>
 ```
 
-### White space
+### Espaciado
+Un detalle importante. En HTML, el espaciado no es relevante. A la hora de la interpretación, los espacios en blanco se quitan de la ecuación.
 
-Pretty important. In HTML, white space is not relevant. Space is removed from the equation.
-
-To the browser,
+Para el navegador,
 
 ```html
-<p>A paragraph of text</p>
+<p>Un parágrafo de texto</p>
 ```
 
-is the same as
+es lo mismo que
 
 ```html
-<p>        A paragraph of text</p>
+<p>        Un parágrafo de texto</p>
 ```
 
-and the same as
+y lo mismo que
 
 ```html
-<p>A paragraph
+<p>Un parágrafo
 
-of
-           text          </p>
+de
+           texto          </p>
 ```
 
  
-I'd say use the syntax that makes things visually more organized and easier to read, but you can use any syntax you like.
+Le aconsejaría que usara una sintaxis que le permita organizar visualmente los elementos, de manera que sea más fácil de leer, pero es libre de usar cualquier sintaxis que desee.
 
-I typically favor
+Yo prefiero, 
 
 ```html
-<p>A paragraph of text</p>
+<p>Un parágrafo de texto</p>
 ```
 
-or
+o
 
 ```html
 <p>
-	A paragraph of text
+	Un parágrafo de texto
 </p>
 ```
 
-Nested tags should be indented with 2 or 4 characters, depending on your preference:
+Las etiquetas que estén dentro de otras deberían ser indentadas con 2 o 4 espacios (o tabulaciones, dependiendo de su gusto):
 
 ```html
 <body>
 	<p>
-		A paragraph of text
+		Un parágrafo de texto
 	</p>
 	<ul>
-		<li>A list item</li>
+		<li>Un objeto de lista</li>
 	</ul>
 </body>
 ```
 
-> Note: this "white space is not relevant" feature means that if you want to add additional space, it can make you pretty mad. I suggest you use CSS to make more space when needed.
+> Nota: esta característica del espaciado significa que, si asi lo desea, agregar espacio puede ser bastante complicado. Le sugiero que use CSS para hacer más espacio cuando sea necesario.
 
-> Note: in special cases, you can use the `&nbsp;` HTML entity (an acronym that means _non-breaking space_) - more on HTML entities later on. I think this should not be abused. CSS is always preferred to alter the visual presentation.
+> Nota: en casos especiales, puede usar la entidad HTML `&nbsp;` (un acrónimo que significa _non-breaking space_ (o un espacio que sí se muestra), pero explicaré más luego. Sin embargo, creo que esto no debería ser abusado. Es preferible usar CSS para alterar la presentación visual.
