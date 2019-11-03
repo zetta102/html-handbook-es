@@ -1,12 +1,12 @@
 # Introducción
 
-HTML es un estándar definido por el **WHATWG**, un acrónimo para Web Hypertext Application Technology Working Group, una organización formada por gente trabajando en los navegadores web más populares. Básicamente significa que está controlado por Google, Mozilla, Apple and Microsoft.
+HTML es un estándar definido por el **WHATWG**, un acrónimo para Web Hypertext Application Technology Working Group, una organización formada por gente trabajando en los navegadores web más populares. Básicamente significa que está controlado por Google, Mozilla, Apple y Microsoft.
 
 En el pasado, el **W3C** (Consorcio World Wide Web) era la organización a cargo de crear el estándar HTML.
 
-El control del mismo pasó del W3C al WHATWG cuadno quedó claro que la inclinación del W3C hacia el XHTML no era una buena idea.
+El control del mismo pasó del W3C al WHATWG cuando quedó claro que la inclinación del W3C hacia el XHTML no era una buena idea.
 
-Si nunca has escuchado de XHTML, acá tiene una historia corta. A principios de los 2000, todos creíamos que el futuro del internet era XML (en serio). Así que HTML pasó de ser un lenguaje de marcado basado en SMGL a un lenguaje de marcado XML.
+Si nunca has escuchado de XHTML, acá tienes una historia corta. A principios de los 2000, todos creíamos que el futuro del internet era XML (en serio). Así que HTML pasó de ser un lenguaje de marcado basado en SMGL a un lenguaje de marcado XML.
 
 Era un cambio bastante grande. Teníamos que conocer y respetar más reglas, siendo estas también más estrictas.
 
